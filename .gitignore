@@ -1,0 +1,32 @@
+# Claude Code
+.claude/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Editor directories
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment variables (if ever added)
+.env
+.env.local
+.env*.local
+
+# Dependencies (if npx/node tools are ever added)
+node_modules/
