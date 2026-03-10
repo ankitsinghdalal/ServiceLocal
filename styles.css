@@ -6,15 +6,15 @@
     --bg: #0F172A;
     --bg-surface: #1E293B;
     --bg-raised: #2D3D52;
-    --primary: #F59E0B;
-    --primary-dark: #D97706;
-    --primary-glow: rgba(245, 158, 11, 0.15);
-    --primary-glow-strong: rgba(245, 158, 11, 0.25);
+    --primary: #818CF8;
+    --primary-dark: #6366F1;
+    --primary-glow: rgba(129, 140, 248, 0.15);
+    --primary-glow-strong: rgba(129, 140, 248, 0.25);
     --text-primary: #F1F5F9;
     --text-secondary: #94A3B8;
     --text-muted: #64748B;
     --border: rgba(255, 255, 255, 0.07);
-    --border-accent: rgba(245, 158, 11, 0.3);
+    --border-accent: rgba(129, 140, 248, 0.3);
     --success: #10B981;
     --error: #EF4444;
     --radius: 14px;
@@ -472,6 +472,370 @@ footer {
     box-shadow: 0 0 16px var(--primary-glow-strong);
 }
 
+/* ─── Light Theme Variables ──────────────────────────────────── */
+[data-theme="light"] {
+    --bg: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --bg-raised: #F1F5F9;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    --border: rgba(0, 0, 0, 0.08);
+    --border-accent: rgba(129, 140, 248, 0.45);
+    --primary-glow: rgba(129, 140, 248, 0.12);
+    --primary-glow-strong: rgba(129, 140, 248, 0.28);
+}
+
+[data-theme="light"] header {
+    background: rgba(248, 250, 252, 0.92);
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] footer {
+    background: #E2E8F0;
+}
+
+[data-theme="light"] .page-hero,
+[data-theme="light"] .service-hero {
+    background: linear-gradient(135deg, #EEF2F7 0%, #E2E8F0 100%);
+}
+
+[data-theme="light"] .why-section {
+    background: var(--bg-raised);
+    border-top-color: var(--border);
+    border-bottom-color: var(--border);
+}
+
+/* index.html — hero dot-grid adapts to light */
+[data-theme="light"] .hero::before {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+/* index.html — search bar in light */
+[data-theme="light"] .search-bar {
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(129, 140, 248, 0.08);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* index.html — cta box in light */
+[data-theme="light"] .cta-box {
+    background: linear-gradient(135deg, #EEF2F7 0%, #F8FAFC 100%);
+    border-color: rgba(129, 140, 248, 0.2);
+}
+
+/* ─── Theme Toggle Button ─────────────────────────────────────── */
+.theme-toggle {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.theme-toggle:hover {
+    background: var(--bg-raised);
+    border-color: var(--border-accent);
+    box-shadow: 0 0 12px var(--primary-glow);
+}
+
+/* ─── Floating CTA Bar ────────────────────────────────────────── */
+.floating-cta {
+    position: fixed;
+    bottom: 1.75rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    display: flex;
+    gap: 0.75rem;
+    z-index: 89;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.floating-cta.fk-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.floating-cta-btn {
+    padding: 0.8rem 1.6rem;
+    border-radius: 100px;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    white-space: nowrap;
+}
+
+.floating-cta-btn:hover {
+    transform: translateY(-2px);
+}
+
+.fk-btn-book {
+    background: var(--primary);
+    color: #0F172A;
+}
+
+.fk-btn-book:hover {
+    background: var(--primary-dark);
+    box-shadow: 0 8px 32px rgba(129, 140, 248, 0.4);
+}
+
+.fk-btn-pro {
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border) !important;
+}
+
+.fk-btn-pro:hover {
+    background: var(--bg-raised);
+    border-color: var(--border-accent) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 600px) {
+    .floating-cta {
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        transform: translateY(80px);
+        width: calc(100% - 2rem);
+    }
+
+    .floating-cta.fk-visible {
+        transform: translateY(0);
+    }
+
+    .floating-cta-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 0.8rem 1rem;
+    }
+}
+
+/* ─── Feedback / Suggestions Tab ─────────────────────────────── */
+.feedback-tab {
+    position: fixed;
+    bottom: 1.75rem;
+    right: 1.5rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0.65rem 1.1rem;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    cursor: pointer;
+    z-index: 88;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.feedback-tab:hover {
+    background: var(--bg-raised);
+    border-color: var(--border-accent);
+    color: var(--text-primary);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+    .feedback-tab {
+        bottom: 5.5rem;
+        right: 1rem;
+        padding: 0.55rem 0.85rem;
+        font-size: 0.78rem;
+    }
+}
+
+/* ─── Suggestions Modal ───────────────────────────────────────── */
+.feedback-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.feedback-overlay.active {
+    display: flex;
+}
+
+.feedback-modal {
+    background: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 2rem 2rem 1.75rem;
+    max-width: 440px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.4);
+}
+
+.feedback-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, border-color 0.2s;
+    line-height: 1;
+}
+
+.feedback-close:hover {
+    color: var(--text-primary);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.feedback-modal h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.feedback-sub {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.feedback-modal .form-group {
+    margin-bottom: 0.9rem;
+}
+
+.feedback-modal label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.35rem;
+    letter-spacing: 0.2px;
+}
+
+.feedback-modal input,
+.feedback-modal select,
+.feedback-modal textarea {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    background: var(--bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem;
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.feedback-modal input:focus,
+.feedback-modal select:focus,
+.feedback-modal textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.feedback-modal input::placeholder,
+.feedback-modal textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.feedback-modal select option {
+    background: var(--bg-surface);
+    color: var(--text-primary);
+}
+
+.feedback-modal textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.btn-fb-submit {
+    width: 100%;
+    padding: 0.85rem;
+    background: var(--primary);
+    color: #0F172A;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: 'Sora', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    margin-top: 0.5rem;
+    letter-spacing: -0.2px;
+}
+
+.btn-fb-submit:hover {
+    background: var(--primary-dark);
+    box-shadow: 0 0 24px var(--primary-glow-strong);
+}
+
+.btn-fb-submit:disabled {
+    background: var(--bg-raised);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.feedback-message {
+    text-align: center;
+    padding: 0.65rem;
+    border-radius: var(--radius-sm);
+    margin-top: 0.65rem;
+    font-weight: 500;
+    font-size: 0.85rem;
+    display: none;
+}
+
+.feedback-message.error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    color: #FCA5A5;
+    display: block;
+}
+
+/* ─── Animations ─────────────────────────────────────────────── */
+@keyframes pop {
+    0%   { transform: scale(0.5); opacity: 0; }
+    70%  { transform: scale(1.15); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
 /* ─── Animations ─────────────────────────────────────────────── */
 .fade-in {
     opacity: 0;
@@ -488,6 +852,20 @@ footer {
 @media (max-width: 968px) {
     nav {
         display: none;
+    }
+
+    nav.nav-mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-surface);
+        padding: 1rem;
+        border-bottom: 1px solid var(--border);
+        gap: 0.75rem;
+        z-index: 99;
     }
 
     .mobile-menu-btn {
