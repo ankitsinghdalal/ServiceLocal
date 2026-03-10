@@ -15,6 +15,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Join FixKaro as a Service Partner | Technician Registration">
     <meta name="twitter:description" content="Register as a service professional on FixKaro. Join our network of verified plumbers, electricians, carpenters, painters, and more in Bahadurgarh.">
+    <script>!function(){var t=localStorage.getItem('fk-theme')||'light';document.documentElement.setAttribute('data-theme',t)}();</script>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -23,7 +24,7 @@
         .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; max-width: 900px; margin: 0 auto; }
         .benefit-item { display: flex; align-items: center; gap: 0.85rem; padding: 1.1rem 1.25rem; background: var(--bg-surface); border-radius: var(--radius); border: 1px solid var(--border); transition: border-color 0.2s; }
         .benefit-item:hover { border-color: var(--border-accent); }
-        .benefit-icon { width: 38px; height: 38px; border-radius: 9px; background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.2); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+        .benefit-icon { width: 38px; height: 38px; border-radius: 9px; background: rgba(129,140,248,0.12); border: 1px solid rgba(129,140,248,0.2); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
         .benefit-item span { font-size: 0.92rem; font-weight: 500; color: var(--text-primary); }
 
         /* Form */
@@ -40,7 +41,7 @@
         .form-group select option { background: var(--bg-surface); color: var(--text-primary); }
         .form-group input:focus,
         .form-group select:focus,
-        .form-group textarea:focus { border-color: rgba(245,158,11,0.5); box-shadow: 0 0 0 3px rgba(245,158,11,0.08); }
+        .form-group textarea:focus { border-color: rgba(129,140,248,0.5); box-shadow: 0 0 0 3px rgba(129,140,248,0.08); }
         .form-group input::placeholder,
         .form-group textarea::placeholder { color: var(--text-muted); }
         .form-group textarea { resize: vertical; min-height: 80px; }
@@ -51,7 +52,7 @@
 
         /* Success / Error messages */
         .form-message { text-align: center; padding: 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-weight: 500; display: none; }
-        .form-message.success { background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.25); color: #6EE7B7; display: block; }
+        .form-message.success { background: rgba(129,140,248,0.12); border: 1px solid rgba(129,140,248,0.25); color: #6EE7B7; display: block; }
         .form-message.error { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.25); color: #FCA5A5; display: block; }
 
         @media (max-width: 600px) {
@@ -64,6 +65,14 @@
             100% { transform: scale(1); opacity: 1; }
         }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-228N3XZ30Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-228N3XZ30Y');
+    </script>
 </head>
 <body>
     <header>
@@ -75,7 +84,10 @@
                 <a href="join.html">Join as Partner</a>
                 <a href="index.html" class="nav-cta">Book Now</a>
             </nav>
-            <button class="mobile-menu-btn" aria-label="Menu">&#9776;</button>
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+                <button class="theme-toggle" aria-label="Toggle theme">&#9728;</button>
+                <button class="mobile-menu-btn" aria-label="Menu">&#9776;</button>
+            </div>
         </div>
     </header>
 
@@ -240,6 +252,58 @@
         </div>
     </footer>
 
+
+    <!-- Suggestions Tab -->
+    <button class="feedback-tab" id="feedback-tab-btn">&#128161; Suggest</button>
+
+    <!-- Suggestions Modal -->
+    <div class="feedback-overlay" id="feedback-overlay">
+        <div class="feedback-modal">
+            <button class="feedback-close" id="feedback-close">&times;</button>
+
+            <div id="feedback-form-view">
+                <h2>Share a Suggestion</h2>
+                <p class="feedback-sub">Help us improve FixKaro for Bahadurgarh.</p>
+                <form id="feedback-form">
+                    <div class="form-group">
+                        <label>Your Name <span style="color:var(--text-muted);font-weight:400;">(optional)</span></label>
+                        <input type="text" id="fb-name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone / Email <span style="color:var(--text-muted);font-weight:400;">(optional, for follow-up)</span></label>
+                        <input type="text" id="fb-contact" placeholder="+91 XXXXX or email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="fb-category">
+                            <option value="New Service">Request a New Service</option>
+                            <option value="Pricing">Pricing Feedback</option>
+                            <option value="Website">Website Feedback</option>
+                            <option value="General">General Suggestion</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Suggestion <span style="color:var(--error);">*</span></label>
+                        <textarea id="fb-message" placeholder="Tell us what you think or what service you need..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-fb-submit" id="fb-submit">Send Suggestion</button>
+                    <div id="fb-msg" class="feedback-message"></div>
+                </form>
+            </div>
+
+            <div id="feedback-success-view" style="display:none; text-align:center; padding: 1rem 0 0.5rem;">
+                <div style="font-size:3rem; margin-bottom:1rem; animation: pop 0.4s ease;">&#128161;</div>
+                <h2 style="margin-bottom:0.5rem;">Thank You!</h2>
+                <p style="color:var(--text-secondary); font-size:0.92rem; line-height:1.6; margin-bottom:1.5rem;">Your suggestion has been received. We review every submission and use it to make FixKaro better.</p>
+                <button class="btn-fb-submit" onclick="closeFeedbackModal()">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="floating-cta">
+        <a href="index.html" class="floating-cta-btn fk-btn-book">&#128197; Book Now</a>
+        <a href="join.html" class="floating-cta-btn fk-btn-pro">&#128295; Join as Pro</a>
+    </div>
     <script src="script.js"></script>
     <script>
         // =====================================================
