@@ -523,6 +523,54 @@ footer {
     border-color: rgba(129, 140, 248, 0.2);
 }
 
+/* ─── Hindi font-size compensation ──────────────────────────── */
+/* Devanagari glyphs render ~8% taller than Latin at the same size */
+[data-lang="hi"] body {
+    font-size: 0.94em;
+}
+[data-lang="hi"] h1 {
+    font-size: 0.88em;
+    letter-spacing: -0.5px;
+}
+[data-lang="hi"] h2 {
+    font-size: 0.92em;
+}
+[data-lang="hi"] h3 {
+    font-size: 0.94em;
+}
+[data-lang="hi"] .feedback-tab {
+    font-size: 0.78rem;
+}
+[data-lang="hi"] .floating-cta-btn {
+    font-size: 0.82rem;
+}
+
+/* ─── Language Toggle Button ─────────────────────────────────── */
+.lang-toggle {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    height: 38px;
+    padding: 0 0.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.lang-toggle:hover {
+    background: var(--bg-raised);
+    border-color: var(--border-accent);
+    box-shadow: 0 0 12px var(--primary-glow);
+}
+
 /* ─── Theme Toggle Button ─────────────────────────────────────── */
 .theme-toggle {
     background: var(--bg-surface);

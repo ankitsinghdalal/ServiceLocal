@@ -642,10 +642,11 @@
             <nav>
                 <a href="#services">Services</a>
                 <a href="#how-it-works">How It Works</a>
-                <a href="join.html">Join as Partner</a>
-                <a href="#book" class="nav-cta">Book Now</a>
+                <a href="join.html" data-i18n="nav.join">Join as Partner</a>
+                <a href="#book" class="nav-cta" data-i18n="nav.book">Book Now</a>
             </nav>
             <div style="display:flex;align-items:center;gap:0.75rem;">
+                <button class="lang-toggle" aria-label="हिंदी में बदलें">हिं</button>
                 <button class="theme-toggle" aria-label="Toggle theme">&#9728;</button>
                 <button class="mobile-menu-btn" aria-label="Menu">&#9776;</button>
             </div>
@@ -655,13 +656,13 @@
     <!-- Hero Section -->
     <section id="book" class="hero">
         <div class="container">
-            <div class="hero-badge">&#9733; Trusted in Bahadurgarh</div>
-            <h1>Book Trusted Professionals<br><span class="highlight">For Every Home Need</span></h1>
-            <p>From plumbers and electricians to carpenters and pujaris &mdash; find verified local experts at your doorstep within hours.</p>
+            <div class="hero-badge" data-i18n="home.hero_badge">&#9733; Trusted in Bahadurgarh</div>
+            <h1 data-i18n-html="home.hero_h1">Book Trusted Professionals<br><span class="highlight">For Every Home Need</span></h1>
+            <p data-i18n="home.hero_sub">From plumbers and electricians to carpenters and pujaris &mdash; find verified local experts at your doorstep within hours.</p>
 
             <div class="search-bar">
                 <select id="service-select">
-                    <option value="">Select a service</option>
+                    <option value="" data-i18n="home.select_svc">Select a service</option>
                     <option value="plumber">Plumber</option>
                     <option value="electrician">Electrician</option>
                     <option value="carpenter">Carpenter</option>
@@ -671,8 +672,8 @@
                     <option value="ac">AC Repair</option>
                     <option value="pest">Pest Control</option>
                 </select>
-                <input type="text" id="location-input" placeholder="Enter your area or pincode">
-                <button type="button" id="search-btn">Search &rarr;</button>
+                <input type="text" id="location-input" placeholder="Enter your area or pincode" data-i18n-ph="home.area_ph">
+                <button type="button" id="search-btn" data-i18n="home.search_btn">Search &rarr;</button>
             </div>
         </div>
     </section>
@@ -705,8 +706,8 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>What do you need help with?</h2>
-                <p>Choose from a wide range of home services</p>
+                <h2 data-i18n="home.services_title">What do you need help with?</h2>
+                <p data-i18n="home.services_sub">Choose from a wide range of home services</p>
             </div>
 
             <div class="services-grid fade-in">
@@ -758,25 +759,25 @@
     <section id="how-it-works" class="how-it-works">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>How It Works</h2>
-                <p>Get service at your door in 3 simple steps</p>
+                <h2 data-i18n="home.hiw_title">How It Works</h2>
+                <p data-i18n="home.hiw_sub">Get service at your door in 3 simple steps</p>
             </div>
 
             <div class="steps fade-in">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Choose a Service</h3>
-                    <p>Pick the service you need, enter your location, and select a convenient time slot.</p>
+                    <h3 data-i18n="home.step1_title">Choose a Service</h3>
+                    <p data-i18n="home.step1_desc">Pick the service you need, enter your location, and select a convenient time slot.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Get Matched</h3>
-                    <p>We match you with a verified, rated professional near you. Review their profile before confirming.</p>
+                    <h3 data-i18n="home.step2_title">Get Matched</h3>
+                    <p data-i18n="home.step2_desc">We match you with a verified, rated professional near you. Review their profile before confirming.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Job Done</h3>
-                    <p>The professional arrives at your doorstep. Pay after the work is completed to your satisfaction.</p>
+                    <h3 data-i18n="home.step3_title">Job Done</h3>
+                    <p data-i18n="home.step3_desc">The professional arrives at your doorstep. Pay after the work is completed to your satisfaction.</p>
                 </div>
             </div>
         </div>
@@ -803,22 +804,22 @@
 
             <!-- Form view -->
             <div id="booking-form-view">
-                <h2>Book a Service</h2>
+                <h2 data-i18n="home.modal_title">Book a Service</h2>
                 <p class="selected-info" id="booking-info"></p>
                 <form id="booking-form">
                     <div class="form-group">
-                        <label>Your Name <span class="required">*</span></label>
-                        <input type="text" id="booking-name" placeholder="Enter your full name" required>
+                        <label><span data-i18n="home.modal_name_label">Your Name</span> <span class="required">*</span></label>
+                        <input type="text" id="booking-name" placeholder="Enter your full name" data-i18n-ph="home.modal_name_ph" required>
                     </div>
                     <div class="form-group">
-                        <label>Phone Number <span class="required">*</span></label>
-                        <input type="tel" id="booking-phone" placeholder="10-digit mobile number" required pattern="[0-9]{10}" maxlength="10">
+                        <label><span data-i18n="home.modal_phone_label">Phone Number</span> <span class="required">*</span></label>
+                        <input type="tel" id="booking-phone" placeholder="10-digit mobile number" data-i18n-ph="home.modal_phone_ph" required pattern="[0-9]{10}" maxlength="10">
                     </div>
                     <div class="form-group">
-                        <label>Describe the issue (optional)</label>
-                        <textarea id="booking-description" placeholder="e.g. Kitchen tap leaking, need urgent repair"></textarea>
+                        <label data-i18n="home.modal_desc_label">Describe the issue (optional)</label>
+                        <textarea id="booking-description" placeholder="e.g. Kitchen tap leaking, need urgent repair" data-i18n-ph="home.modal_desc_ph"></textarea>
                     </div>
-                    <button type="submit" class="btn-book" id="booking-submit">Confirm Booking Request</button>
+                    <button type="submit" class="btn-book" id="booking-submit" data-i18n="home.modal_submit">Confirm Booking Request</button>
                     <div id="booking-message" class="booking-message"></div>
                 </form>
             </div>
@@ -826,16 +827,16 @@
             <!-- Success view (hidden until submission) -->
             <div id="booking-success-view" style="display:none; text-align:center; padding: 1rem 0 0.5rem;">
                 <div style="font-size:3.5rem; margin-bottom:1rem; animation: pop 0.4s ease;">&#9989;</div>
-                <h2 style="margin-bottom:0.6rem;">Booking Confirmed!</h2>
+                <h2 style="margin-bottom:0.6rem;" data-i18n="home.success_title">Booking Confirmed!</h2>
                 <p id="booking-success-detail" style="color:var(--text-secondary); font-size:0.95rem; line-height:1.6; margin-bottom:1.75rem;"></p>
-                <button class="btn-book" onclick="closeBookingModal()" style="width:100%;">Done</button>
+                <button class="btn-book" onclick="closeBookingModal()" style="width:100%;" data-i18n="home.success_done">Done</button>
             </div>
         </div>
     </div>
 
     <!-- Floating CTA Bar -->
     <!-- Suggestions Tab -->
-    <button class="feedback-tab" id="feedback-tab-btn">&#128161; Suggest</button>
+    <button class="feedback-tab" id="feedback-tab-btn" data-i18n="feedback.tab">💬 Feedback</button>
 
     <!-- Suggestions Modal -->
     <div class="feedback-overlay" id="feedback-overlay">
@@ -843,47 +844,47 @@
             <button class="feedback-close" id="feedback-close">&times;</button>
 
             <div id="feedback-form-view">
-                <h2>Share a Suggestion</h2>
-                <p class="feedback-sub">Help us improve FixKaro for Bahadurgarh.</p>
+                <h2 data-i18n="feedback.title">Share a Suggestion</h2>
+                <p class="feedback-sub" data-i18n="feedback.sub">Help us improve FixKaro for Bahadurgarh.</p>
                 <form id="feedback-form">
                     <div class="form-group">
-                        <label>Your Name <span style="color:var(--text-muted);font-weight:400;">(optional)</span></label>
-                        <input type="text" id="fb-name" placeholder="Enter your name">
+                        <label><span data-i18n="feedback.name_label">Your Name</span> <span style="color:var(--text-muted);font-weight:400;" data-i18n="feedback.name_optional">(optional)</span></label>
+                        <input type="text" id="fb-name" placeholder="Enter your name" data-i18n-ph="feedback.name_ph">
                     </div>
                     <div class="form-group">
-                        <label>Phone / Email <span style="color:var(--text-muted);font-weight:400;">(optional, for follow-up)</span></label>
-                        <input type="text" id="fb-contact" placeholder="+91 XXXXX or email@example.com">
+                        <label><span data-i18n="feedback.contact_label">Phone / Email</span> <span style="color:var(--text-muted);font-weight:400;" data-i18n="feedback.contact_optional">(optional, for follow-up)</span></label>
+                        <input type="text" id="fb-contact" placeholder="+91 XXXXX or email@example.com" data-i18n-ph="feedback.contact_ph">
                     </div>
                     <div class="form-group">
-                        <label>Category</label>
+                        <label data-i18n="feedback.category_label">Category</label>
                         <select id="fb-category">
-                            <option value="New Service">Request a New Service</option>
-                            <option value="Pricing">Pricing Feedback</option>
-                            <option value="Website">Website Feedback</option>
-                            <option value="General">General Suggestion</option>
+                            <option value="New Service" data-i18n="feedback.cat_new">Request a New Service</option>
+                            <option value="Pricing" data-i18n="feedback.cat_pricing">Pricing Feedback</option>
+                            <option value="Website" data-i18n="feedback.cat_website">Website Feedback</option>
+                            <option value="General" data-i18n="feedback.cat_general">General Suggestion</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Your Suggestion <span style="color:var(--error);">*</span></label>
-                        <textarea id="fb-message" placeholder="Tell us what you think or what service you need..." required></textarea>
+                        <label><span data-i18n="feedback.message_label">Your Suggestion</span> <span style="color:var(--error);">*</span></label>
+                        <textarea id="fb-message" placeholder="Tell us what you think or what service you need..." data-i18n-ph="feedback.message_ph" required></textarea>
                     </div>
-                    <button type="submit" class="btn-fb-submit" id="fb-submit">Send Suggestion</button>
+                    <button type="submit" class="btn-fb-submit" id="fb-submit" data-i18n="feedback.submit">Send Suggestion</button>
                     <div id="fb-msg" class="feedback-message"></div>
                 </form>
             </div>
 
             <div id="feedback-success-view" style="display:none; text-align:center; padding: 1rem 0 0.5rem;">
                 <div style="font-size:3rem; margin-bottom:1rem; animation: pop 0.4s ease;">&#128161;</div>
-                <h2 style="margin-bottom:0.5rem;">Thank You!</h2>
-                <p style="color:var(--text-secondary); font-size:0.92rem; line-height:1.6; margin-bottom:1.5rem;">Your suggestion has been received. We review every submission and use it to make FixKaro better.</p>
-                <button class="btn-fb-submit" onclick="closeFeedbackModal()">Done</button>
+                <h2 style="margin-bottom:0.5rem;" data-i18n="feedback.success_title">Thank You!</h2>
+                <p style="color:var(--text-secondary); font-size:0.92rem; line-height:1.6; margin-bottom:1.5rem;" data-i18n="feedback.success_msg">Your suggestion has been received. We review every submission and use it to make FixKaro better.</p>
+                <button class="btn-fb-submit" onclick="closeFeedbackModal()" data-i18n="feedback.done">Done</button>
             </div>
         </div>
     </div>
 
     <div class="floating-cta" id="floating-cta">
-        <button class="floating-cta-btn fk-btn-book" onclick="openBookingModal()">&#128197; Book Now</button>
-        <a href="join.html" class="floating-cta-btn fk-btn-pro">&#128295; Join as Pro</a>
+        <button class="floating-cta-btn fk-btn-book" onclick="openBookingModal()" data-i18n="cta.book">📅 Book Now</button>
+        <a href="join.html" class="floating-cta-btn fk-btn-pro" data-i18n="cta.join">🤝 Partner बनें</a>
     </div>
 
     <!-- Footer -->
@@ -892,10 +893,10 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">Fix<span>Karo</span></a>
-                    <p>Your trusted platform for booking verified local home service professionals in Bahadurgarh.</p>
+                    <p data-i18n="footer.tagline">Your trusted platform for booking verified local home service professionals in Bahadurgarh.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Services</h4>
+                    <h4 data-i18n="footer.col.services">Services</h4>
                     <a href="plumber.html">Plumber</a>
                     <a href="electrician.html">Electrician</a>
                     <a href="carpenter.html">Carpenter</a>
@@ -904,19 +905,19 @@
                     <a href="ac-repair.html">AC Repair</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Company</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
+                    <h4 data-i18n="footer.col.company">Company</h4>
+                    <a href="about.html" data-i18n="footer.about">About Us</a>
+                    <a href="contact.html" data-i18n="footer.contact">Contact</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Support</h4>
-                    <a href="terms.html">Terms of Service</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="cancellation.html">Cancellation Policy</a>
+                    <h4 data-i18n="footer.col.support">Support</h4>
+                    <a href="terms.html" data-i18n="footer.terms">Terms of Service</a>
+                    <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="cancellation.html" data-i18n="footer.cancellation">Cancellation Policy</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 FixKaro. All rights reserved.</p>
+                <p data-i18n="footer.rights">© 2026 FixKaro. All rights reserved.</p>
                 <div class="footer-social">
                     <a href="#" aria-label="Twitter">&#120143;</a>
                     <a href="#" aria-label="Instagram">&#9673;</a>

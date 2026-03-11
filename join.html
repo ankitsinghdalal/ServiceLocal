@@ -79,12 +79,13 @@
         <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
             <a href="index.html" class="logo">Fix<span>Karo</span></a>
             <nav>
-                <a href="index.html#services">Services</a>
-                <a href="index.html#how-it-works">How It Works</a>
-                <a href="join.html">Join as Partner</a>
-                <a href="index.html" class="nav-cta">Book Now</a>
+                <a href="index.html#services" data-i18n="nav.services">Services</a>
+                <a href="index.html#how-it-works" data-i18n="nav.how_it_works">How It Works</a>
+                <a href="join.html" data-i18n="nav.join">Join as Partner</a>
+                <a href="index.html" class="nav-cta" data-i18n="nav.book">Book Now</a>
             </nav>
             <div style="display:flex;align-items:center;gap:0.75rem;">
+                <button class="lang-toggle" aria-label="हिंदी में बदलें">हिं</button>
                 <button class="theme-toggle" aria-label="Toggle theme">&#9728;</button>
                 <button class="mobile-menu-btn" aria-label="Menu">&#9776;</button>
             </div>
@@ -93,8 +94,8 @@
 
     <section class="page-hero">
         <div class="container">
-            <h1>Join <span class="highlight">FixKaro</span> as a Partner</h1>
-            <p>Register as a service professional and start getting customers in Bahadurgarh. It's free to join.</p>
+            <h1 data-i18n-html="join.hero_h1">Join <span class="highlight">FixKaro</span> as a Partner</h1>
+            <p data-i18n="join.hero_sub">Register as a service professional and start getting customers in Bahadurgarh. It's free to join.</p>
         </div>
     </section>
 
@@ -103,19 +104,19 @@
             <div class="benefits-grid">
                 <div class="benefit-item">
                     <div class="benefit-icon">&#128176;</div>
-                    <span>Earn more with direct leads</span>
+                    <span data-i18n="join.b1">Earn more with direct leads</span>
                 </div>
                 <div class="benefit-item">
                     <div class="benefit-icon">&#128197;</div>
-                    <span>Flexible working hours</span>
+                    <span data-i18n="join.b2">Flexible working hours</span>
                 </div>
                 <div class="benefit-item">
                     <div class="benefit-icon">&#128100;</div>
-                    <span>Grow your customer base</span>
+                    <span data-i18n="join.b3">Grow your customer base</span>
                 </div>
                 <div class="benefit-item">
                     <div class="benefit-icon">&#128274;</div>
-                    <span>Verified badge on profile</span>
+                    <span data-i18n="join.b4">Verified badge on profile</span>
                 </div>
             </div>
         </div>
@@ -126,77 +127,77 @@
             <!-- Success screen (hidden until submission) -->
             <div id="registration-success" style="display:none; max-width:560px; margin:0 auto; text-align:center; padding:2rem 1.5rem;">
                 <div style="font-size:3.5rem; margin-bottom:1.25rem; animation: pop 0.4s ease;">&#127881;</div>
-                <h2 style="font-size:1.75rem; margin-bottom:0.75rem;">Registration Submitted!</h2>
-                <p style="color:var(--text-secondary); font-size:1rem; line-height:1.7; margin-bottom:2rem;">Thank you for joining FixKaro! Our team will review your details and reach out to you within <strong style="color:var(--text-primary);">24 hours</strong> to complete your onboarding.</p>
-                <a href="index.html" class="btn-primary">Go to Homepage</a>
+                <h2 style="font-size:1.75rem; margin-bottom:0.75rem;" data-i18n="join.success_title">Registration Submitted!</h2>
+                <p style="color:var(--text-secondary); font-size:1rem; line-height:1.7; margin-bottom:2rem;" data-i18n="join.success_msg">Thank you for joining FixKaro! Our team will review your details and reach out to you within 24 hours to complete your onboarding.</p>
+                <a href="index.html" class="btn-primary" data-i18n="join.go_home">Go to Homepage</a>
             </div>
 
             <div id="registration-form-wrap">
-            <h2>Register Now</h2>
-            <p class="subtitle">Fill in your details and we'll get you started within 24 hours.</p>
+            <h2 data-i18n="join.form_title">Register Now</h2>
+            <p class="subtitle" data-i18n="join.form_sub">Fill in your details and we'll get you started within 24 hours.</p>
 
             <form class="registration-form" id="registration-form">
                 <div class="form-group">
-                    <label>Full Name <span class="required">*</span></label>
-                    <input type="text" name="name" id="name" placeholder="Enter your full name" required>
+                    <label><span data-i18n="join.name_label">Full Name</span> <span class="required">*</span></label>
+                    <input type="text" name="name" id="name" placeholder="Enter your full name" data-i18n-ph="join.name_ph" required>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Phone Number <span class="required">*</span></label>
-                        <input type="tel" name="phone" id="phone" placeholder="10-digit mobile number" required pattern="[0-9]{10}" maxlength="10">
+                        <label><span data-i18n="join.phone_label">Phone Number</span> <span class="required">*</span></label>
+                        <input type="tel" name="phone" id="phone" placeholder="10-digit mobile number" data-i18n-ph="join.phone_ph" required pattern="[0-9]{10}" maxlength="10">
                     </div>
                     <div class="form-group">
-                        <label>WhatsApp Number</label>
-                        <input type="tel" name="whatsapp" id="whatsapp" placeholder="If different from phone" maxlength="10">
+                        <label data-i18n="join.whatsapp_label">WhatsApp Number</label>
+                        <input type="tel" name="whatsapp" id="whatsapp" placeholder="If different from phone" data-i18n-ph="join.whatsapp_ph" maxlength="10">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Service Category <span class="required">*</span></label>
+                    <label><span data-i18n="join.service_label">Service Category</span> <span class="required">*</span></label>
                     <select name="service" id="service" required>
-                        <option value="">Select your service</option>
-                        <option value="Plumber">Plumber</option>
-                        <option value="Electrician">Electrician</option>
-                        <option value="Carpenter">Carpenter</option>
-                        <option value="Painter">Painter</option>
-                        <option value="AC Repair">AC Repair & Service</option>
-                        <option value="Pujari">Pujari / Pandit</option>
-                        <option value="Home Cleaning">Home Cleaning</option>
-                        <option value="Pest Control">Pest Control</option>
-                        <option value="Other">Other</option>
+                        <option value="" data-i18n="join.service_ph">Select your service</option>
+                        <option value="Plumber" data-i18n="join.svc.plumber">Plumber</option>
+                        <option value="Electrician" data-i18n="join.svc.electrician">Electrician</option>
+                        <option value="Carpenter" data-i18n="join.svc.carpenter">Carpenter</option>
+                        <option value="Painter" data-i18n="join.svc.painter">Painter</option>
+                        <option value="AC Repair" data-i18n="join.svc.ac">AC Repair &amp; Service</option>
+                        <option value="Pujari" data-i18n="join.svc.pujari">Pujari / Pandit</option>
+                        <option value="Home Cleaning" data-i18n="join.svc.cleaning">Home Cleaning</option>
+                        <option value="Pest Control" data-i18n="join.svc.pest">Pest Control</option>
+                        <option value="Other" data-i18n="join.svc.other">Other</option>
                     </select>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Area / Locality <span class="required">*</span></label>
-                        <input type="text" name="area" id="area" placeholder="e.g. Sector 3, Nehru Colony" required>
+                        <label><span data-i18n="join.area_label">Area / Locality</span> <span class="required">*</span></label>
+                        <input type="text" name="area" id="area" placeholder="e.g. Sector 3, Nehru Colony" data-i18n-ph="join.area_ph" required>
                     </div>
                     <div class="form-group">
-                        <label>Years of Experience <span class="required">*</span></label>
+                        <label><span data-i18n="join.exp_label">Years of Experience</span> <span class="required">*</span></label>
                         <select name="experience" id="experience" required>
-                            <option value="">Select experience</option>
-                            <option value="0-1 years">Less than 1 year</option>
-                            <option value="1-3 years">1 - 3 years</option>
-                            <option value="3-5 years">3 - 5 years</option>
-                            <option value="5-10 years">5 - 10 years</option>
-                            <option value="10+ years">10+ years</option>
+                            <option value="" data-i18n="join.exp_ph">Select experience</option>
+                            <option value="0-1 years" data-i18n="join.exp.lt1">Less than 1 year</option>
+                            <option value="1-3 years" data-i18n="join.exp.1_3">1 - 3 years</option>
+                            <option value="3-5 years" data-i18n="join.exp.3_5">3 - 5 years</option>
+                            <option value="5-10 years" data-i18n="join.exp.5_10">5 - 10 years</option>
+                            <option value="10+ years" data-i18n="join.exp.10p">10+ years</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Aadhaar Number</label>
-                    <input type="text" name="aadhaar" id="aadhaar" placeholder="12-digit Aadhaar number (for verification)" maxlength="12" pattern="[0-9]{12}">
+                    <label data-i18n="join.aadhaar_label">Aadhaar Number</label>
+                    <input type="text" name="aadhaar" id="aadhaar" placeholder="12-digit Aadhaar number (for verification)" data-i18n-ph="join.aadhaar_ph" maxlength="12" pattern="[0-9]{12}">
                 </div>
 
                 <div class="form-group">
-                    <label>Anything else you'd like us to know?</label>
-                    <textarea name="notes" id="notes" placeholder="e.g. I also do waterproofing, available only on weekends..."></textarea>
+                    <label data-i18n="join.notes_label">Anything else you'd like us to know?</label>
+                    <textarea name="notes" id="notes" placeholder="e.g. I also do waterproofing, available only on weekends..." data-i18n-ph="join.notes_ph"></textarea>
                 </div>
 
-                <button type="submit" class="btn-submit" id="submit-btn">Submit Registration</button>
+                <button type="submit" class="btn-submit" id="submit-btn" data-i18n="join.submit">Submit Registration</button>
                 <div id="form-message" class="form-message"></div>
             </form>
             </div><!-- /registration-form-wrap -->
@@ -205,9 +206,9 @@
 
     <section class="page-cta">
         <div class="container">
-            <h2>Looking for a service instead?</h2>
-            <p>Book a verified professional for your home service needs.</p>
-            <a href="index.html" class="btn-primary">Book a Service</a>
+            <h2 data-i18n="join.cta_title">Looking for a service instead?</h2>
+            <p data-i18n="join.cta_sub">Book a verified professional for your home service needs.</p>
+            <a href="index.html" class="btn-primary" data-i18n="join.cta_btn">Book a Service</a>
         </div>
     </section>
 
@@ -216,10 +217,10 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">Fix<span>Karo</span></a>
-                    <p>Your trusted platform for booking verified local home service professionals in Bahadurgarh.</p>
+                    <p data-i18n="footer.tagline">Your trusted platform for booking verified local home service professionals in Bahadurgarh.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Services</h4>
+                    <h4 data-i18n="footer.col.services">Services</h4>
                     <a href="plumber.html">Plumber</a>
                     <a href="electrician.html">Electrician</a>
                     <a href="carpenter.html">Carpenter</a>
@@ -228,20 +229,20 @@
                     <a href="ac-repair.html">AC Repair</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Company</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="join.html">Join as Partner</a>
+                    <h4 data-i18n="footer.col.company">Company</h4>
+                    <a href="about.html" data-i18n="footer.about">About Us</a>
+                    <a href="contact.html" data-i18n="footer.contact">Contact</a>
+                    <a href="join.html" data-i18n="nav.join">Join as Partner</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Support</h4>
-                    <a href="terms.html">Terms of Service</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="cancellation.html">Cancellation Policy</a>
+                    <h4 data-i18n="footer.col.support">Support</h4>
+                    <a href="terms.html" data-i18n="footer.terms">Terms of Service</a>
+                    <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="cancellation.html" data-i18n="footer.cancellation">Cancellation Policy</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 FixKaro. All rights reserved.</p>
+                <p data-i18n="footer.rights">© 2026 FixKaro. All rights reserved.</p>
                 <div class="footer-social">
                     <a href="#" aria-label="Twitter">&#120143;</a>
                     <a href="#" aria-label="Instagram">&#9673;</a>
@@ -254,7 +255,7 @@
 
 
     <!-- Suggestions Tab -->
-    <button class="feedback-tab" id="feedback-tab-btn">&#128161; Suggest</button>
+    <button class="feedback-tab" id="feedback-tab-btn" data-i18n="feedback.tab">💬 Feedback</button>
 
     <!-- Suggestions Modal -->
     <div class="feedback-overlay" id="feedback-overlay">
@@ -262,47 +263,47 @@
             <button class="feedback-close" id="feedback-close">&times;</button>
 
             <div id="feedback-form-view">
-                <h2>Share a Suggestion</h2>
-                <p class="feedback-sub">Help us improve FixKaro for Bahadurgarh.</p>
+                <h2 data-i18n="feedback.title">Share a Suggestion</h2>
+                <p class="feedback-sub" data-i18n="feedback.sub">Help us improve FixKaro for Bahadurgarh.</p>
                 <form id="feedback-form">
                     <div class="form-group">
-                        <label>Your Name <span style="color:var(--text-muted);font-weight:400;">(optional)</span></label>
-                        <input type="text" id="fb-name" placeholder="Enter your name">
+                        <label><span data-i18n="feedback.name_label">Your Name</span> <span style="color:var(--text-muted);font-weight:400;" data-i18n="feedback.name_optional">(optional)</span></label>
+                        <input type="text" id="fb-name" placeholder="Enter your name" data-i18n-ph="feedback.name_ph">
                     </div>
                     <div class="form-group">
-                        <label>Phone / Email <span style="color:var(--text-muted);font-weight:400;">(optional, for follow-up)</span></label>
-                        <input type="text" id="fb-contact" placeholder="+91 XXXXX or email@example.com">
+                        <label><span data-i18n="feedback.contact_label">Phone / Email</span> <span style="color:var(--text-muted);font-weight:400;" data-i18n="feedback.contact_optional">(optional, for follow-up)</span></label>
+                        <input type="text" id="fb-contact" placeholder="+91 XXXXX or email@example.com" data-i18n-ph="feedback.contact_ph">
                     </div>
                     <div class="form-group">
-                        <label>Category</label>
+                        <label data-i18n="feedback.category_label">Category</label>
                         <select id="fb-category">
-                            <option value="New Service">Request a New Service</option>
-                            <option value="Pricing">Pricing Feedback</option>
-                            <option value="Website">Website Feedback</option>
-                            <option value="General">General Suggestion</option>
+                            <option value="New Service" data-i18n="feedback.cat_new">Request a New Service</option>
+                            <option value="Pricing" data-i18n="feedback.cat_pricing">Pricing Feedback</option>
+                            <option value="Website" data-i18n="feedback.cat_website">Website Feedback</option>
+                            <option value="General" data-i18n="feedback.cat_general">General Suggestion</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Your Suggestion <span style="color:var(--error);">*</span></label>
-                        <textarea id="fb-message" placeholder="Tell us what you think or what service you need..." required></textarea>
+                        <label><span data-i18n="feedback.message_label">Your Suggestion</span> <span style="color:var(--error);">*</span></label>
+                        <textarea id="fb-message" placeholder="Tell us what you think or what service you need..." data-i18n-ph="feedback.message_ph" required></textarea>
                     </div>
-                    <button type="submit" class="btn-fb-submit" id="fb-submit">Send Suggestion</button>
+                    <button type="submit" class="btn-fb-submit" id="fb-submit" data-i18n="feedback.submit">Send Suggestion</button>
                     <div id="fb-msg" class="feedback-message"></div>
                 </form>
             </div>
 
             <div id="feedback-success-view" style="display:none; text-align:center; padding: 1rem 0 0.5rem;">
                 <div style="font-size:3rem; margin-bottom:1rem; animation: pop 0.4s ease;">&#128161;</div>
-                <h2 style="margin-bottom:0.5rem;">Thank You!</h2>
-                <p style="color:var(--text-secondary); font-size:0.92rem; line-height:1.6; margin-bottom:1.5rem;">Your suggestion has been received. We review every submission and use it to make FixKaro better.</p>
-                <button class="btn-fb-submit" onclick="closeFeedbackModal()">Done</button>
+                <h2 style="margin-bottom:0.5rem;" data-i18n="feedback.success_title">Thank You!</h2>
+                <p style="color:var(--text-secondary); font-size:0.92rem; line-height:1.6; margin-bottom:1.5rem;" data-i18n="feedback.success_msg">Your suggestion has been received. We review every submission and use it to make FixKaro better.</p>
+                <button class="btn-fb-submit" onclick="closeFeedbackModal()" data-i18n="feedback.done">Done</button>
             </div>
         </div>
     </div>
 
     <div class="floating-cta">
-        <a href="index.html" class="floating-cta-btn fk-btn-book">&#128197; Book Now</a>
-        <a href="join.html" class="floating-cta-btn fk-btn-pro">&#128295; Join as Pro</a>
+        <a href="index.html" class="floating-cta-btn fk-btn-book" data-i18n="cta.book">📅 Book Now</a>
+        <a href="join.html" class="floating-cta-btn fk-btn-pro" data-i18n="cta.join">🤝 Partner बनें</a>
     </div>
     <script src="script.js"></script>
     <script>
